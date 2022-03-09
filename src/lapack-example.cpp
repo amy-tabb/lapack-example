@@ -1,11 +1,6 @@
 #include <iostream>
-
-#include <chrono>
-
 #include <Eigen/Dense>
-#include <Eigen/Eigenvalues>
-#include <Eigen/Geometry>
-#include <Eigen/QR>
+
 
 using namespace Eigen;
 using namespace std;
@@ -17,6 +12,7 @@ extern "C" void dggev_(const char* JOBVL, const char* JOBVR, const int* N,
         double* WORK, const int* LWORK, int* INFO);
 
 // Generalised Eigen-Problem
+// source adapted from https://eigen.tuxfamily.org/index.php?title=Lapack
 // Solve:
 // A * v(j) = lambda(j) * B * v(j).
 //
